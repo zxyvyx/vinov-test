@@ -12,6 +12,7 @@ import TimelineCard from "../common/TimelineCard.vue";
 import PartnerSearch from "../common/PartnerSearch.vue";
 import TabPills from "../ui/Tabs/TabPills.vue";
 import ProgressBar from "../ui/ProgressBar.vue";
+import { ref } from "vue";
 
 const tabList = [
   {
@@ -55,23 +56,35 @@ const featuredInventionStaticList = [
     counterLike: 10,
     tags: ["AI", "Agriculture"],
   },
+  {
+    id: "featured-invention-3",
+    title: "Visual AI Fruit Grading",
+    description:
+      "By using visual AI technology, we can grade fruits based on their quality and size. This technology can help farmers to increase their productivity and reduce waste.",
+    author: "Richard Sembata",
+    date: "2021-10-10",
+    counterLike: 10,
+    tags: ["AI", "Agriculture"],
+  },
 ];
 
 const timelineStaticList = [
   {
     id: "timeline-1",
     user: "Rizky Maulana",
-    activities: "Join as collaborator",
+    activities: "Join as collaborator in an idea",
     timelineType: "join",
     url: "#",
-    tags: ["Big Data"],
+    urlText: "Retail Performance Dashboard",
+    tags: ["IOT", "Sales"],
   },
   {
     id: "timeline-2",
     user: "Rizky Maulana",
-    tags: ["Big Data"],
-    activities:
-      "By using visual AI technology, we can grade fruits based on their quality and size. This technology can help farmers to increase their productivity and reduce waste.",
+    tags: ["Big Data", "Planning"],
+    activities: "Submit new idea",
+    url: "#",
+    urlText: "Big data technology",
     timelineType: "embedded",
     embed: {
       embedMedia:
@@ -116,8 +129,8 @@ const partnerSearchStaticList = [
 
 <template>
   <div class="bg-gray-100 font-sans">
-    <div class="container mx-auto p-4">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+    <div class="container mx-auto p-4 h-full">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-y-4 lg:gap-4">
         <!-- Left Sidebar -->
         <aside class="space-y-4">
           <Card>
@@ -192,7 +205,7 @@ const partnerSearchStaticList = [
         <main class="col-span-2 flex flex-col space-y-4">
           <div class="flex flex-col">
             <div class="flex gap-2">
-              <TabPills title="Featured Invention " />
+              <TabPills title="Featured Invention " isActive="true" />
               <TabPills title="Featured Idea / Product " />
               <TabPills title="Featured Problems " />
             </div>
@@ -220,7 +233,7 @@ const partnerSearchStaticList = [
               </Card>
             </div>
           </div>
-          <div class="bg-white p-4 rounded shadow">
+          <Card>
             <div class="space-y-4">
               <TimelineCard
                 v-for="timeline in timelineStaticList"
@@ -229,6 +242,7 @@ const partnerSearchStaticList = [
                 :activities="timeline.activities"
                 :timelineType="timeline.timelineType"
                 :url="timeline.url"
+                :urlText="timeline.urlText"
                 :tags="timeline.tags"
                 :embed="timeline.embed"
                 :voteCounters="timeline.voteCounters"
@@ -236,20 +250,26 @@ const partnerSearchStaticList = [
                 :repostCounters="timeline.repostCounters"
               />
             </div>
-          </div>
+          </Card>
         </main>
         <!-- Right Sidebar -->
-        <aside class="space-y-4">
+        <aside class="space-y-4 sticky top-0">
           <div class="bg-white p-4 rounded shadow">
             <h2 class="text-lg font-bold mb-2">Build an Innovation Team</h2>
-            <input
-              class="border rounded p-2 w-full mb-2"
-              placeholder="Type Skill Criteria"
-              type="text"
-            />
-            <button class="bg-blue-500 text-white px-4 py-2 rounded w-full">
-              Search Candidates
-            </button>
+            <form @submit.prevent="onSubmit" name="search-candidates">
+              <input
+                v-model="searchCriteria"
+                class="border rounded p-2 w-full mb-2"
+                placeholder="Type Skill Criteria"
+                type="text"
+              />
+              <button
+                type="submit"
+                class="bg-blue-500 text-white hover:cursor-pointer px-4 py-2 rounded w-full"
+              >
+                Search Candidates
+              </button>
+            </form>
           </div>
           <div class="bg-white p-4 rounded shadow">
             <h2 class="text-lg font-bold mb-2">Innovation Program</h2>

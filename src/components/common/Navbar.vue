@@ -1,24 +1,29 @@
 <template>
-  <header
-    class="flex items-center justify-between sticky top-0 bg-white p-2 shadow-md z-10"
-  >
-    <div class="flex items-center">
-      <!-- <img
-        alt="Vinov logo"
-        class="mr-2 h-full"
-        height="50"
-        src="/src/assets/vinov.svg"
-      /> -->
-    </div>
-    <div class="flex items-center space-x-4">
-      <input
-        class="border border-gray-200 rounded p-2 w-64"
-        placeholder="search product, invention, problem"
-        type="text"
-      />
-      <CalendarDateRangeIcon class="h-6 text-gray-600" />
-      <BellIcon class="h-6 text-gray-600" />
-      <UserCircleIcon class="h-6 text-gray-600" />
+  <header class="sticky top-0 bg-white shadow-md z-10">
+    <div class="flex items-center justify-between container mx-auto px-4 py-2">
+      <div class="flex items-center">
+        <img
+          alt="Vinov logo"
+          class="h-10 object-contain"
+          src="/src/assets/vue.svg"
+        />
+      </div>
+      <div class="flex items-center space-x-4">
+        <input
+          class="border border-gray-200 rounded p-2 w-64"
+          placeholder="search product, invention, problem"
+          type="text"
+        />
+        <button class="hover:cursor-pointer">
+          <CalendarDateRangeIcon class="h-6 text-gray-600" />
+        </button>
+        <button class="hover:cursor-pointer">
+          <BellIcon class="h-6 text-gray-600" />
+        </button>
+        <button class="hover:cursor-pointer">
+          <UserCircleIcon class="h-6 text-gray-600" />
+        </button>
+      </div>
     </div>
   </header>
 </template>

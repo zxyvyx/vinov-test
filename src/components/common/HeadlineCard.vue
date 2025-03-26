@@ -16,7 +16,7 @@ const props = defineProps([
   <div class="bg-white p-4 rounded border border-gray-200 flex flex-col gap-2">
     <div class="relative">
       <img
-        alt="{title}"
+        :alt="title"
         class="mb-2"
         height="100"
         src="https://storage.googleapis.com/a1aa/image/fUoKgTH6thjg9bUWe5yeZi62JZBpgeXT3IFT9H1GiK4.jpg"
@@ -47,9 +47,11 @@ const props = defineProps([
       </p>
     </div>
     <div class="flex flex-0 justify-between items-center">
-      <a href="{url}" class="text-blue-500"> Read More</a>
-      <button class="hover:cursor-pointer">
-        <HandThumbUpIcon class="h-5 text-blue-500 hover:text-blue-700" />
+      <a :href="url" class="text-blue-500"> Read More</a>
+      <button
+        class="hover:cursor-pointer bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+      >
+        <HandThumbUpIcon class="h-5 text-white" />
       </button>
     </div>
   </div>
