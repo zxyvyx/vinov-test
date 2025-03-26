@@ -5,6 +5,7 @@ const props = defineProps([
   "title",
   "description",
   "author",
+  "image",
   "date",
   "tags",
   "counterLike",
@@ -15,11 +16,7 @@ const props = defineProps([
 <template>
   <div class="bg-white p-4 rounded border border-gray-200 flex flex-col gap-2">
     <div class="relative">
-      <img
-        :alt="title"
-        class="mb-2 w-full"
-        src="https://storage.googleapis.com/a1aa/image/fUoKgTH6thjg9bUWe5yeZi62JZBpgeXT3IFT9H1GiK4.jpg"
-      />
+      <img :alt="title" class="mb-2 w-full" :src="image" />
       <div
         class="flex flex-row flex-wrap gap-1 mb-2 absolute top-0 left-0 w-full m-2"
       >

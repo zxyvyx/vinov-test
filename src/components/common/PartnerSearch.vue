@@ -2,6 +2,7 @@
 const props = defineProps([
   "title",
   "description",
+  "image",
   "author",
   "imageUrl",
   "url",
@@ -10,11 +11,7 @@ const props = defineProps([
 
 <template>
   <div class="flex flex-col gap-1">
-    <img
-      :alt="title"
-      class="mb-2 h-50 object-cover"
-      src="https://storage.googleapis.com/a1aa/image/IkX0U3RsqPGMbQq__lrlDW9wPzBPNzsoVaBAni89Waw.jpg"
-    />
+    <img :alt="title" class="mb-2 h-50 object-cover" :src="image" />
     <p class="text-black text-md font-bold">{{ title || "-" }}</p>
     <p class="text-gray-600 text-sm truncate">
       {{ description || "-" }}

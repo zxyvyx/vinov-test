@@ -23,30 +23,36 @@ const setActiveTab = (tabTitle) => {
 const featuredInventionStaticList = [
   {
     id: "featured-invention-1",
-    title: "Visual AI Fruit Grading",
+    title: "Lorem ipsum dolor sit amet",
     description:
-      "By using visual AI technology, we can grade fruits based on their quality and size. This technology can help farmers to increase their productivity and reduce waste.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptates odio commodi iusto saepe facilis.",
     author: "Richard Sembata",
+    image:
+      "https://storage.googleapis.com/a1aa/image/fUoKgTH6thjg9bUWe5yeZi62JZBpgeXT3IFT9H1GiK4.jpg",
     date: "2021-10-10",
     counterLike: 10,
     tags: ["AI", "Agriculture"],
   },
   {
     id: "featured-invention-2",
-    title: "Visual AI Fruit Grading",
+    title: "Lorem ipsum dolor sit amet",
     description:
-      "By using visual AI technology, we can grade fruits based on their quality and size. This technology can help farmers to increase their productivity and reduce waste.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptates odio commodi iusto saepe facilis.",
     author: "Richard Sembata",
+    image:
+      "https://storage.googleapis.com/a1aa/image/lySDepZ9sLhBUD1SxCzGdOgV3D34T-6YyEKkDw7Np9E.jpg",
     date: "2021-10-10",
     counterLike: 10,
     tags: ["AI", "Agriculture"],
   },
   {
     id: "featured-invention-3",
-    title: "Visual AI Fruit Grading",
+    title: "Lorem ipsum dolor sit amet",
     description:
-      "By using visual AI technology, we can grade fruits based on their quality and size. This technology can help farmers to increase their productivity and reduce waste.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptates odio commodi iusto saepe facilis.",
     author: "Richard Sembata",
+    image:
+      "https://storage.googleapis.com/a1aa/image/5txVYDBwx56JCOK88SuxYp4lCntMRm-C_mNGeAU9Zfk.jpg",
     date: "2021-10-10",
     counterLike: 10,
     tags: ["AI", "Agriculture"],
@@ -74,11 +80,11 @@ const timelineStaticList = [
     embed: {
       embedMedia:
         "https://storage.googleapis.com/a1aa/image/fUoKgTH6thjg9bUWe5yeZi62JZBpgeXT3IFT9H1GiK4.jpg",
-      embedTitle: "Visual AI Fruit Grading",
+      embedTitle: "Lorem ipsum dolor sit amet",
       embedMention: "Richard Sembata",
       embedExtraLink: "#",
       embedDescription:
-        "By using visual AI technology, we can grade fruits based on their quality and size. This technology can help farmers to increase their productivity and reduce waste.",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptates odio commodi iusto saepe facilis.",
       embedUrl: "#",
       embedVoteCounters: 12,
       embedCommentCounters: 12,
@@ -106,7 +112,7 @@ const partnerSearchStaticList = [
     description:
       "We are looking for a team member who has experience in AI and Agriculture",
     imageUrl:
-      "https://storage.googleapis.com/a1aa/image/IkX0U3RsqPGMbQq__lrlDW9wPzBPNzsoVaBAni89Waw.jpg",
+      "https://images.unsplash.com/photo-1742218762991-4ab5c4519195?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     url: "#",
   },
 ];
@@ -220,6 +226,7 @@ const partnerSearchStaticList = [
                       v-for="invention in featuredInventionStaticList"
                       :key="invention.id"
                       :title="invention.title"
+                      :image="invention.image"
                       :description="invention.description"
                       :author="invention.author"
                       :date="invention.date"
@@ -281,6 +288,7 @@ const partnerSearchStaticList = [
                 v-for="partner in partnerSearchStaticList"
                 :key="partner.id"
                 :title="partner.title"
+                :image="partner.imageUrl"
                 :description="partner.description"
                 :imageUrl="partner.imageUrl"
                 :url="partner.url"
