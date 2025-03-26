@@ -14,26 +14,11 @@ import TabPills from "../ui/Tabs/TabPills.vue";
 import ProgressBar from "../ui/ProgressBar.vue";
 import { ref } from "vue";
 
-const tabList = [
-  {
-    id: "tab-1",
-    label: "Featured Invention",
-    isActive: true,
-    isDisabled: false,
-  },
-  {
-    id: "tab-2",
-    label: "Featured Idea / Product",
-    isActive: false,
-    isDisabled: false,
-  },
-  {
-    id: "tab-3",
-    label: "Featured Problems",
-    isActive: false,
-    isDisabled: false,
-  },
-];
+const activeTab = ref("tab1");
+
+const setActiveTab = (tabTitle) => {
+  activeTab.value = tabTitle;
+};
 
 const featuredInventionStaticList = [
   {
@@ -205,9 +190,21 @@ const partnerSearchStaticList = [
         <main class="col-span-2 flex flex-col space-y-4">
           <div class="flex flex-col">
             <div class="flex gap-2">
-              <TabPills title="Featured Invention " isActive="true" />
-              <TabPills title="Featured Idea / Product " />
-              <TabPills title="Featured Problems " />
+              <TabPills
+                title="Featured Invention "
+                :isActive="activeTab === 'tab1'"
+                @click="setActiveTab('tab1')"
+              />
+              <TabPills
+                title="Featured Idea / Product "
+                :isActive="activeTab === 'tab2'"
+                @click="setActiveTab('tab2')"
+              />
+              <TabPills
+                title="Featured Problems "
+                :isActive="activeTab === 'tab3'"
+                @click="setActiveTab('tab3')"
+              />
             </div>
             <div class="-mt-8">
               <Card>
