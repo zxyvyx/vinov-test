@@ -4,7 +4,7 @@ const props = defineProps(["title", "isActive"]);
 
 <template>
   <button
-    class="bg-white px-4 pt-2 pb-10 rounded-lg border border-gray-200 hover:cursor-pointer"
+    class="bg-white px-4 pt-2 pb-2 sm:pb-10 rounded-lg border border-gray-200 hover:cursor-pointer"
   >
     <span :class="isActive ? 'font-bold text-blue-500' : 'text-black'">{{
       title

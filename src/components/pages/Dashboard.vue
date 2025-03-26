@@ -115,7 +115,7 @@ const partnerSearchStaticList = [
 <template>
   <div class="bg-gray-100 font-sans">
     <div class="container mx-auto p-4 h-full">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-y-4 lg:gap-4">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-y-10 lg:gap-4">
         <!-- Left Sidebar -->
         <aside class="space-y-4">
           <Card>
@@ -125,7 +125,7 @@ const partnerSearchStaticList = [
                 class="h-30 mb-2"
                 src="https://storage.googleapis.com/a1aa/image/UFMx-c9cbhsxNBb1GD-uqrbuHt4dguq9oqPVk5vmak4.jpg"
               />
-              <div class="flex flex-col gap-2">
+              <div class="flex flex-col gap-2 flex-grow">
                 <h2 class="text-lg font-bold mb-2">Incubation Batch X</h2>
                 <ProgressBar progress="50" />
                 <ProgressBar progress="30" />
@@ -150,7 +150,7 @@ const partnerSearchStaticList = [
               <button
                 class="bg-gray-200 hover:bg-gray-300 hover:cursor-pointer text-black px-4 py-2 rounded hover:font-bold"
               >
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 text-left">
                   <div class="bg-blue-500 text-white rounded p-1">
                     <LightBulbIcon class="h-5 text-white" />
                   </div>
@@ -160,7 +160,7 @@ const partnerSearchStaticList = [
               <button
                 class="bg-gray-200 hover:bg-gray-300 hover:cursor-pointer text-black px-4 py-2 rounded hover:font-bold"
               >
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 text-left">
                   <div class="bg-red-500 text-white rounded p-1">
                     <ExclamationCircleIcon class="h-5 text-white" />
                   </div>
@@ -169,27 +169,33 @@ const partnerSearchStaticList = [
               </button>
             </div>
           </Card>
-          <Card>
-            <h2 class="text-lg font-bold mb-2">Coordinator Assignment</h2>
-            <button
-              class="bg-gray-200 hover:bg-gray-300 hover:cursor-pointer text-black px-4 py-2 rounded w-full text-left hover:font-bold"
-            >
-              RIIM Startup
-            </button>
-          </Card>
-          <Card>
-            <h2 class="text-lg font-bold mb-2">Mentor Assignment</h2>
-            <button
-              class="bg-gray-200 hover:bg-gray-300 hover:cursor-pointer text-black px-4 py-2 rounded w-full text-left hover:font-bold"
-            >
-              RIIM Startup
-            </button>
-          </Card>
+          <div class="flex flex-row md:flex-col gap-4">
+            <Card :class="`w-full flex flex-col`">
+              <h2 class="text-lg font-bold mb-2 flex-auto">
+                Coordinator Assignment
+              </h2>
+              <button
+                class="bg-gray-200 hover:bg-gray-300 hover:cursor-pointer text-black px-4 py-2 rounded w-full text-left hover:font-bold"
+              >
+                RIIM Startup
+              </button>
+            </Card>
+            <Card :class="`w-full flex flex-col`">
+              <h2 class="text-lg font-bold mb-2 flex-auto">
+                Mentor Assignment
+              </h2>
+              <button
+                class="bg-gray-200 hover:bg-gray-300 hover:cursor-pointer text-black px-4 py-2 rounded w-full text-left hover:font-bold"
+              >
+                RIIM Startup
+              </button>
+            </Card>
+          </div>
         </aside>
         <!-- Main Content -->
         <main class="col-span-2 flex flex-col space-y-4">
           <div class="flex flex-col">
-            <div class="flex gap-2">
+            <div class="flex flex-col sm:flex-row gap-2">
               <TabPills
                 title="Featured Invention "
                 :isActive="activeTab === 'tab1'"
@@ -206,7 +212,7 @@ const partnerSearchStaticList = [
                 @click="setActiveTab('tab3')"
               />
             </div>
-            <div class="-mt-8">
+            <div class="mt-2 sm:-mt-8">
               <Card>
                 <div class="flex flex-col items-center gap-2">
                   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -231,7 +237,7 @@ const partnerSearchStaticList = [
             </div>
           </div>
           <Card>
-            <div class="space-y-4">
+            <div class="space-y-10 flex flex-col">
               <TimelineCard
                 v-for="timeline in timelineStaticList"
                 :key="timeline.id"

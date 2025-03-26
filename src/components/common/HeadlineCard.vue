@@ -17,12 +17,12 @@ const props = defineProps([
     <div class="relative">
       <img
         :alt="title"
-        class="mb-2"
-        height="100"
+        class="mb-2 w-full"
         src="https://storage.googleapis.com/a1aa/image/fUoKgTH6thjg9bUWe5yeZi62JZBpgeXT3IFT9H1GiK4.jpg"
-        width="200"
       />
-      <div class="flex flex-row gap-1 mb-2 absolute top-0 left-0 w-full m-2">
+      <div
+        class="flex flex-row flex-wrap gap-1 mb-2 absolute top-0 left-0 w-full m-2"
+      >
         <span
           v-for="tag in tags"
           :key="tag"
