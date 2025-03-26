@@ -1,9 +1,11 @@
 <script setup>
-import Dashboard from "./components/Dashboard.vue";
-import Navbar from "./components/Navbar.vue";
+import { RouterView } from "vue-router";
+import Navbar from "./components/common/Navbar.vue";
 </script>
 
 <template>
   <Navbar />
-  <Dashboard msg="Vite + Vue" />
+  <div>
+    <RouterView />
+  </div>
 </template>
