@@ -11,7 +11,6 @@ import HeadlineCard from "../common/HeadlineCard.vue";
 import TimelineCard from "../common/TimelineCard.vue";
 import PartnerSearch from "../common/PartnerSearch.vue";
 import TabPills from "../ui/Tabs/TabPills.vue";
-import Tabs from "../ui/Tabs/Tabs.vue";
 import ProgressBar from "../ui/ProgressBar.vue";
 
 const tabList = [
@@ -254,14 +253,16 @@ const partnerSearchStaticList = [
           </div>
           <div class="bg-white p-4 rounded shadow">
             <h2 class="text-lg font-bold mb-2">Innovation Program</h2>
-            <PartnerSearch
-              v-for="partner in partnerSearchStaticList"
-              :key="partner.id"
-              :title="partner.title"
-              :description="partner.description"
-              :imageUrl="partner.imageUrl"
-              :url="partner.url"
-            />
+            <div class="flex flex-col gap-10">
+              <PartnerSearch
+                v-for="partner in partnerSearchStaticList"
+                :key="partner.id"
+                :title="partner.title"
+                :description="partner.description"
+                :imageUrl="partner.imageUrl"
+                :url="partner.url"
+              />
+            </div>
           </div>
         </aside>
       </div>

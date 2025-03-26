@@ -1,9 +1,15 @@
 <script setup>
-const props = ["title", "description", "author", "imageUrl", "url"];
+const props = defineProps([
+  "title",
+  "description",
+  "author",
+  "imageUrl",
+  "url",
+]);
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col gap-1">
     <img
       alt="{title}"
       class="mb-2"
@@ -11,8 +17,8 @@ const props = ["title", "description", "author", "imageUrl", "url"];
       src="https://storage.googleapis.com/a1aa/image/IkX0U3RsqPGMbQq__lrlDW9wPzBPNzsoVaBAni89Waw.jpg"
       width="200"
     />
-    <p class="text-gray-600 text-sm">{{ title || "-" }}</p>
-    <p class="text-gray-600 text-sm">
+    <p class="text-black text-md font-bold">{{ title || "-" }}</p>
+    <p class="text-gray-600 text-sm truncate">
       {{ description || "-" }}
     </p>
     <a href="{url}" class="bg-blue-500 text-white px-4 py-2 rounded w-full">
